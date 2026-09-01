@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto sobre Git</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container contact-page">
+        <header class="hero compact-hero">
+            <div class="badge">Contacto</div>
+            <h1>Pregúntanos sobre Git</h1>
+            <p class="subtitle">
+                ¿Tienes dudas sobre commits, ramas, pull requests o cómo trabajar en equipo con Git? Escribe tu consulta y te responderemos.
+            </p>
+        </header>
+
+        <main class="contact-card">
+            <form id="contactForm" novalidate>
+                <div class="field-group">
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" placeholder="usuario@ejemplo.com" required aria-describedby="emailHelp">
+                    <small id="emailHelp" class="helper-text">Escribe un correo válido para poder enviar el formulario.</small>
+                </div>
+
+                <div class="field-group">
+                    <label for="subject">Asunto</label>
+                    <input id="subject" name="subject" type="text" placeholder="Sobre Git, ramas, merge, etc." required>
+                </div>
+
+                <div class="field-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu pregunta..." required></textarea>
+                </div>
+
+                <button id="submitBtn" type="submit" class="submit-btn" disabled>Enviar pregunta</button>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const emailInput = document.getElementById('email');
+        const submitBtn = document.getElementById('submitBtn');
+        const emailHelp = document.getElementById('emailHelp');
+
+        function isValidEmail(value) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+        }
+
+        function validateEmail() {
+            const value = emailInput.value.trim();
+            const valid = isValidEmail(value);
+
+            emailInput.setCustomValidity(valid ? '' : 'Correo inválido');
+            emailInput.classList.toggle('invalid', !valid && value.length > 0);
+            emailInput.classList.toggle('valid', valid);
+
+            if (value.length === 0) {
+                emailHelp.textContent = 'Escribe un correo válido para poder enviar el formulario.';
+                emailHelp.classList.remove('error');
+            } else if (!valid) {
+                emailHelp.textContent = 'El correo no tiene un formato válido.';
+                emailHelp.classList.add('error');
+            } else {
+                emailHelp.textContent = 'Correo válido.';
+                emailHelp.classList.remove('error');
+                emailHelp.classList.add('success');
+            }
+
+            submitBtn.disabled = !valid;
+        }
+
+        emailInput.addEventListener('input', validateEmail);
+
+        form.addEventListener('submit', function (event) {
+            if (!isValidEmail(emailInput.value)) {
+                event.preventDefault();
+                validateEmail();
+                emailInput.focus();
+            }
+        });
+    </script>
+</body>
+</html>
