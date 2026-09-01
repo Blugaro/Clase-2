@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La historia de Git</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="badge">Historia del control de versiones</div>
+            <h1>La historia de Git</h1>
+            <p class="subtitle">
+                Git nació para resolver un problema real: cómo compartir y proteger el trabajo de muchos desarrolladores sin perder el progreso ni destruir semanas de esfuerzo.
+            </p>
+        </header>
+
+        <main class="timeline">
+            <section class="card highlight">
+                <h2>Antes de Git</h2>
+                <p>
+                    En los primeros años del software, los equipos trabajaban con archivos compartidos y copias manuales. Cada persona hacía cambios en su computadora y, cuando terminaba, enviaba una versión nueva. El problema era claro: si dos personas modificaban el mismo archivo al mismo tiempo, era muy fácil mezclar trabajo, perder cambios o no saber quién había escrito qué.
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>El problema que inspiró el cambio</h2>
+                <p>
+                    En 2005, el proyecto del kernel de Linux necesitaba una herramienta más rápida, segura y flexible que las soluciones existentes. El creador de Git, Linus Torvalds, quería algo capaz de manejar enormes cantidades de código con eficiencia y sin depender de un servidor central para cada operación.
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>El nacimiento de Git</h2>
+                <p>
+                    Git fue creado con una idea poderosa: cada copia del proyecto podía ser una línea del tiempo completa del código. Eso permitió a los programadores guardar instantáneas del proyecto, volver atrás cuando algo salía mal y trabajar en paralelo sin destruir el trabajo de otros.
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>¿Por qué Git se volvió tan importante?</h2>
+                <p>
+                    Git no solo guarda versiones; también registra quién hizo cada cambio y por qué. Así, el historial del proyecto se vuelve una narrativa real del trabajo: se puede entender cuándo apareció un error, quién lo introdujo y cómo repararlo. Esa capacidad de rastrear cada paso convirtió a Git en el estándar de la programación moderna.
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>La idea central: ramas, commits y colaboración</h2>
+                <p>
+                    Git trabaja con tres ideas fundamentales: el repositorio, los commits y las ramas. Un commit es un punto guardado del proyecto, una rama permite explorar una idea sin afectar el trabajo principal, y la colaboración se vuelve posible cuando varias personas trabajan desde distintas ramas y luego combinan sus avances.
+                </p>
+
+                <div class="commands">
+                    <div class="command">
+                        <code>git init</code>
+                        <span>Inicia un repositorio nuevo.</span>
+                    </div>
+                    <div class="command">
+                        <code>git add .</code>
+                        <span>Prepara los cambios para guardarlos.</span>
+                    </div>
+                    <div class="command">
+                        <code>git commit -m "mensaje"</code>
+                        <span>Guarda una versión con descripción.</span>
+                    </div>
+                    <div class="command">
+                        <code>git branch</code>
+                        <span>Crea o revisa ramas de trabajo.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card highlight">
+                <h2>Hoy en día</h2>
+                <p>
+                    Git es la base de GitHub, GitLab y otras plataformas de colaboración. Gracias a él, millones de personas trabajan juntas en proyectos pequeños y gigantes, desde sitios web hasta sistemas operativos completos. La historia de Git no es solo la historia de un programa: es la historia de cómo la comunidad de software aprendió a crear, compartir y mejorar código de manera ordenada y segura.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            Git nos enseña que el verdadero valor no está solo en escribir código, sino en guardar ese camino para poder seguir avanzando juntos.
+        </footer>
+    </div>
+</body>
+</html>
